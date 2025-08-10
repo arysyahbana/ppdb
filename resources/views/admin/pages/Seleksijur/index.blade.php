@@ -26,13 +26,14 @@
                                 </div>
                                 <div class="fs-6">
                                     Tanggal Publish :
-                                    @if ($siswa->first()->rPendaftaran->published_jurusan_at)
+                                    @if ($siswa->first()?->rPendaftaran?->published_jurusan_at)
                                         <span class="text-success fw-bold">
-                                            {{ \Carbon\Carbon::parse($siswa->first()->rPendaftaran->published_jurusan_at)->translatedFormat('d F Y, H:i') }} WIB
+                                            {{ \Carbon\Carbon::parse($siswa->first()?->rPendaftaran?->published_jurusan_at)->translatedFormat('d F Y, H:i') }} WIB
                                         </span>
                                     @else
                                         <span class="text-danger fw-bold">Belum dipublish</span>
                                     @endif
+
                                 </div>
                             </div>
                             <x-admin.table id="datatable">
